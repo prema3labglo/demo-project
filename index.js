@@ -155,6 +155,6 @@ var server = app.listen(4000, function () {
   console.log("Example app listening at http://%s:%s", host, port);
 });
 
-app.use('/.netlify/functions/index',router)
+app.use('/.netlify/functions/api',router)
 
 module.exports.handler=serverless(app)
