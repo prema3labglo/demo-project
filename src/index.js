@@ -11,7 +11,7 @@ var cookieParser=require("cookie-parser")
 
 app.use(express.json());
 app.use(cookieParser())
-const User = require("../model/Usermodel");
+const User = require("./model/Usermodel");
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const secretkey="amrepamrepamrep"
@@ -155,6 +155,8 @@ var server = app.listen(4000, function () {
   console.log("Example app listening at http://%s:%s", host, port);
 });
 
-app.use('/.netlify/functions/api',router)
+app.use(`/.netlify/functions/api`, router);
+
+module.exports = app;
 
 module.exports.handler=serverless(app)
