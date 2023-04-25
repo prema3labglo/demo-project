@@ -11,7 +11,7 @@ var cookieParser=require("cookie-parser")
 
 app.use(express.json());
 app.use(cookieParser())
-const User = require("./model/Usermodel");
+const User = require("../model/Usermodel");
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const secretkey="amrepamrepamrep"
