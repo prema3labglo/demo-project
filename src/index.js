@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
+const serverless=require("serverless-http")
+const router=express.Router();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const jwt = require('jsonwebtoken');
@@ -152,3 +154,7 @@ var server = app.listen(4000, function () {
   var port = server.address().port;
   console.log("Example app listening at http://%s:%s", host, port);
 });
+
+app.use('/.netlify/functions/index',router)
+
+module.exports.handler=serverless(app)
