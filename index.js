@@ -16,8 +16,23 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const secretkey="amrepamrepamrep"
 
+const corsOpts = {
+  origin: '*',
 
-app.use(cors({ credentials: true, origin: "https://profound-dasik-b0e766.netlify.app/" }));
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
+app.use(cors(corsOpts));
+
+
+// app.use(cors({ credentials: true, origin: "https://profound-dasik-b0e766.netlify.app/" }));
 
 DB =
   "mongodb+srv://premalabglo:5WOQ11iochIoRmS4@cluster0.varcrvt.mongodb.net/demodata?retryWrites=true&w=majority";
