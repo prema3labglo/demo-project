@@ -48,7 +48,7 @@ mongoose
   });
 
 app.get("/", function (req, res) {
-  res.send("welcome ");
+  res.send("server is running ");
 });
 
 app.post("/register", async (req, res) => {
