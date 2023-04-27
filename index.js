@@ -16,23 +16,21 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const secretkey="amrepamrepamrep"
 
-const corsOpts = {
-  origin: '*',
-
-  methods: [
-    'GET',
-    'POST',
-  ],
-
-  allowedHeaders: [
-    'Content-Type',
-  ],
-};
-
-app.use(cors(corsOpts));
-
-
-// app.use(cors({ credentials: true, origin: "https://profound-dasik-b0e766.netlify.app/" }));
+var allowedOrigins = ['http://localhost:3000',
+                      'https://profound-dasik-b0e766.netlify.app/'];
+app.use(cors({
+  origin: function(origin, callback){
+    // allow requests with no origin 
+    // (like mobile apps or curl requests)
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      var msg = 'The CORS policy for this site does not ' +
+                'allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
 
 DB =
   "mongodb+srv://premalabglo:5WOQ11iochIoRmS4@cluster0.varcrvt.mongodb.net/demodata?retryWrites=true&w=majority";
