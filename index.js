@@ -17,7 +17,7 @@ const cors = require("cors");
 const secretkey="amrepamrepamrep"
 
 
-app.use(cors({ credentials: true, origin: "https://preeminent-melba-893fe9.netlify.app/" }));
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 DB =
   "mongodb+srv://premalabglo:5WOQ11iochIoRmS4@cluster0.varcrvt.mongodb.net/demodata?retryWrites=true&w=majority";
