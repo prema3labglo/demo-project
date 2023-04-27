@@ -17,7 +17,8 @@ const cors = require("cors");
 const secretkey="amrepamrepamrep"
 
 var allowedOrigins = ['http://localhost:3000',
-                      'https://profound-dasik-b0e766.netlify.app/'];
+                      'https://profound-dasik-b0e766.netlify.app'];
+                    
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
