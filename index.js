@@ -17,7 +17,7 @@ const cors = require("cors");
 const secretkey="amrepamrepamrep"
 
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://profound-dasik-b0e766.netlify.app/" }));
 
 DB =
   "mongodb+srv://premalabglo:5WOQ11iochIoRmS4@cluster0.varcrvt.mongodb.net/demodata?retryWrites=true&w=majority";
